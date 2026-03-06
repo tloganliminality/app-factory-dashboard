@@ -5,10 +5,8 @@ const nextConfig = {
   images: {
     unoptimized: true
   },
-  // Ensure server binds to 0.0.0.0 for Railway
-  experimental: {
-    outputStandalone: true
-  }
+  // Use standalone output for Railway
+  output: 'standalone'
 }
 
 module.exports = nextConfig
