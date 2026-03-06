@@ -16,16 +16,11 @@ COPY . .
 # Build the application
 RUN npm run build
 
-# Expose port 3000
-EXPOSE 3000
+# Expose the port that Railway assigns
+EXPOSE $PORT
 
 # Set environment to production
 ENV NODE_ENV=production
-ENV PORT=3000
 
-# Health check
-HEALTHCHECK --interval=30s --timeout=3s --start-period=5s --retries=3 \
-  CMD curl -f http://localhost:3000/ || exit 1
-
-# Start the application
+# Start the application (Railway sets PORT automatically)
 CMD ["npm", "start"]
