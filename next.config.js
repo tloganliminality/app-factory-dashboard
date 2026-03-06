@@ -1,11 +1,12 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   // App directory is now stable in Next.js 14+
+  output: 'export',
   trailingSlash: true,
   images: {
     unoptimized: true
   },
-  // Server-side rendering for Railway deployment
+  // Disable server-side features for static export
   experimental: {
     // missingSuspenseWithCSRBailout: false,
   }
